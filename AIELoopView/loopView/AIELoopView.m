@@ -2,18 +2,24 @@
 //  AIELoopView.m
 //  图片轮播器
 //
-//  Created by BrianLee on 16/4/7.
-//  Copyright © 2016年 BrianLee. All rights reserved.
+//  Created by 王新伟 on 16/4/7.
+//  Copyright © 2016年 王新伟. All rights reserved.
 //
 
 #import "AIELoopView.h"
 #import "AIELoopViewLayout.h"
 #import "AIELoopViewCell.h"
-#import "HomeADModel.h"
+#import <Masonry.h>
+
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width
+
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
 #define LoopCellKey @"loopcell"
+
 @interface AIELoopView() <UICollectionViewDelegate,UICollectionViewDataSource>
-/*URL数组*/
-@property (nonatomic) NSArray <HomeADModel *> *urls;
+/*链接数组*/
+@property (nonatomic) NSArray <NSString *> * urls;
 /*选中的回调*/
 @property (nonatomic, copy) void (^didSelectedCallBack)(NSInteger);
 /*当前显示索引*/
@@ -26,7 +32,7 @@
 
 @implementation AIELoopView
 
-- (instancetype)initWithURLs:(NSArray <HomeADModel *> *)urls didSelected:(void (^)(NSInteger))didSelected {
+-(instancetype)initWithURLs:(NSArray<NSString *> *)urls didSelected:(void (^)(NSInteger))didSelected{
     self = [super initWithFrame:CGRectZero collectionViewLayout:[[AIELoopViewLayout alloc] init]];
     if (self) {
         self.urls = urls;
@@ -75,7 +81,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     AIELoopViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:LoopCellKey forIndexPath:indexPath];
-    cell.url = self.urls[indexPath.row % self.urls.count].image;
+    cell.url = self.urls[indexPath.row % self.urls.count];
     return cell;
 }
 
@@ -139,11 +145,10 @@
 }
 
 -(UIPageControl *)pageControl{
-    if (_pageControl == nil) {
-        UIPageControl *pageCtrl = [[UIPageControl alloc]init];
-        pageCtrl.currentPageIndicatorTintColor = [UIColor blackColor];
-        pageCtrl.pageIndicatorTintColor = [UIColor lightGrayColor];
-        _pageControl = pageCtrl;
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc]init];
+        _pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+        _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     }
     return _pageControl;
 }

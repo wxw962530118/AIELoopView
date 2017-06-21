@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		673176061B49103495F9DDFE /* libPods-AIELoopView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 595A6B8A730A1187C5CD2C19 /* libPods-AIELoopView.a */; };
 		ACD3FD6D1EFA19390046EB19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FD6C1EFA19390046EB19 /* main.m */; };
 		ACD3FD701EFA19390046EB19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FD6F1EFA19390046EB19 /* AppDelegate.m */; };
 		ACD3FD731EFA19390046EB19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FD721EFA19390046EB19 /* ViewController.m */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B20C46077A4EF4251F041C1 /* Pods-AIELoopView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIELoopView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AIELoopView/Pods-AIELoopView.debug.xcconfig"; sourceTree = "<group>"; };
+		595A6B8A730A1187C5CD2C19 /* libPods-AIELoopView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AIELoopView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		768B24E33B437C5B0E4780C0 /* Pods-AIELoopView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIELoopView.release.xcconfig"; path = "Pods/Target Support Files/Pods-AIELoopView/Pods-AIELoopView.release.xcconfig"; sourceTree = "<group>"; };
 		ACD3FD681EFA19390046EB19 /* AIELoopView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIELoopView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD3FD6C1EFA19390046EB19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACD3FD6E1EFA19390046EB19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,17 +46,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673176061B49103495F9DDFE /* libPods-AIELoopView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E1798FBABA4637BA561B591 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B20C46077A4EF4251F041C1 /* Pods-AIELoopView.debug.xcconfig */,
+				768B24E33B437C5B0E4780C0 /* Pods-AIELoopView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8690FBC1B04AB65901D3FB18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				595A6B8A730A1187C5CD2C19 /* libPods-AIELoopView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACD3FD5F1EFA19390046EB19 = {
 			isa = PBXGroup;
 			children = (
 				ACD3FD6A1EFA19390046EB19 /* AIELoopView */,
 				ACD3FD691EFA19390046EB19 /* Products */,
+				2E1798FBABA4637BA561B591 /* Pods */,
+				8690FBC1B04AB65901D3FB18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACD3FD7F1EFA19390046EB19 /* Build configuration list for PBXNativeTarget "AIELoopView" */;
 			buildPhases = (
+				68F953976B1CBC8498A8956D /* [CP] Check Pods Manifest.lock */,
 				ACD3FD641EFA19390046EB19 /* Sources */,
 				ACD3FD651EFA19390046EB19 /* Frameworks */,
 				ACD3FD661EFA19390046EB19 /* Resources */,
+				B86A4AEB5E13BCCF6062DA73 /* [CP] Embed Pods Frameworks */,
+				70721F8826493E18BDA5CB87 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,6 +194,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68F953976B1CBC8498A8956D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70721F8826493E18BDA5CB87 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AIELoopView/Pods-AIELoopView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B86A4AEB5E13BCCF6062DA73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AIELoopView/Pods-AIELoopView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACD3FD641EFA19390046EB19 /* Sources */ = {
@@ -296,6 +371,7 @@
 		};
 		ACD3FD801EFA19390046EB19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B20C46077A4EF4251F041C1 /* Pods-AIELoopView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AIELoopView/Info.plist;
@@ -307,6 +383,7 @@
 		};
 		ACD3FD811EFA19390046EB19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 768B24E33B437C5B0E4780C0 /* Pods-AIELoopView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AIELoopView/Info.plist;
@@ -335,6 +412,7 @@
 				ACD3FD811EFA19390046EB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

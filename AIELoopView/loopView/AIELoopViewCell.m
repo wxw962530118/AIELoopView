@@ -2,12 +2,12 @@
 //  AIELoopViewCell.m
 //  图片轮播器
 //
-//  Created by BrianLee on 16/4/7.
-//  Copyright © 2016年 BrianLee. All rights reserved.
+//  Created by 王新伟 on 16/4/7.
+//  Copyright © 2016年 王新伟. All rights reserved.
 //
 
 #import "AIELoopViewCell.h"
-
+#import <UIImageView+WebCache.h>
 @implementation AIELoopViewCell {
     UIImageView *_imageView;
 }
@@ -25,14 +25,18 @@
 
 - (void)setUrl:(NSString *)url {
     _url = url;
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"Picture_Loading_Bg_375"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (error == nil && (cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone)) {
-            _imageView.alpha = 0;
-            [UIView animateWithDuration:.5f animations:^{
-                _imageView.alpha = 1;
-            }];
-        }
-    }];
+    if ([url hasPrefix:@"http:"]) {
+        [_imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"Picture_Loading_Bg_375"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (error == nil && (cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone)) {
+                _imageView.alpha = 0;
+                [UIView animateWithDuration:.5f animations:^{
+                    _imageView.alpha = 1;
+                }];
+            }
+        }];
+    }else{
+        _imageView.image = [UIImage imageNamed:url];
+    }
 }
 
 @end
