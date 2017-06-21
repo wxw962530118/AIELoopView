@@ -99,7 +99,7 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
-    self.pageControl.currentPage = [collectionView indexPathForCell:collectionView.visibleCells.lastObject].row%self.urls.count;
+    self.pageControl.currentPage = [collectionView indexPathForCell:collectionView.visibleCells.lastObject].row % self.urls.count;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,8 +117,7 @@
     [self startTimer];
 }
 
-#pragma mark - 定时器控制
-/// 启动定时器
+#pragma mark --- 定时器控制
 - (void)startTimer {
     if (self.urls.count <= 1 || self.timer != nil) {
         return;
