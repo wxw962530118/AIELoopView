@@ -29,7 +29,7 @@
 /*页控件*/
 @property (nonatomic, strong) UIPageControl * pageControl;
 @end
-//test3
+//test4
 @implementation AIELoopView
 
 -(instancetype)initWithURLs:(NSArray<NSString *> *)urls didSelected:(void (^)(NSInteger))didSelected{
