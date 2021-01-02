@@ -25,7 +25,7 @@
 
 - (void)setUrl:(NSString *)url {
     _url = url;
-    if ([url hasPrefix:@"http:"]) {
+    if ([url hasPrefix:@"http:"] || [url hasPrefix:@"https:"]) {
         [_imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"Picture_Loading_Bg_375"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if (error == nil && (cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone)) {
                 _imageView.alpha = 0;
