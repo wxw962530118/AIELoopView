@@ -10,7 +10,7 @@
 #import "AIELoopViewLayout.h"
 #import "AIELoopViewCell.h"
 #import <Masonry.h>
-
+#import "AIELoopPageControl.h"
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -28,6 +28,8 @@
 @property (nonatomic, strong) NSTimer *timer;
 /*页控件*/
 @property (nonatomic, strong) UIPageControl * pageControl;
+/***/
+@property (nonatomic, strong) AIELoopPageControl * loopPageControl;
 @end
 
 @implementation AIELoopView
@@ -64,8 +66,8 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    [self.superview addSubview:self.pageControl];
-    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.superview addSubview:self.loopPageControl];
+    [self.loopPageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
         make.bottom.mas_equalTo(self.mas_bottom);
         make.height.mas_equalTo(15);
@@ -100,6 +102,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     self.pageControl.currentPage = [collectionView indexPathForCell:collectionView.visibleCells.lastObject].row % self.urls.count;
+    self.loopPageControl.currentPageControl = self.pageControl.currentPage;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -151,5 +154,14 @@
     }
     return _pageControl;
 }
+
+
+-(AIELoopPageControl *)loopPageControl{
+    if (_loopPageControl == nil) {
+        _loopPageControl = [[AIELoopPageControl alloc]initWithStyle:PageControlStyle_Circle pageNumber:self.urls.count];
+    }
+    return _loopPageControl;
+}
+
 
 @end

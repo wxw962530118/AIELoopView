@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		673176061B49103495F9DDFE /* libPods-AIELoopView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 595A6B8A730A1187C5CD2C19 /* libPods-AIELoopView.a */; };
+		AC13A2921F5798E2007CE0A8 /* AIELoopPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AC13A2911F5798E2007CE0A8 /* AIELoopPageControl.m */; };
 		ACD3FD6D1EFA19390046EB19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FD6C1EFA19390046EB19 /* main.m */; };
 		ACD3FD701EFA19390046EB19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FD6F1EFA19390046EB19 /* AppDelegate.m */; };
 		ACD3FD731EFA19390046EB19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FD721EFA19390046EB19 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 		2B20C46077A4EF4251F041C1 /* Pods-AIELoopView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIELoopView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AIELoopView/Pods-AIELoopView.debug.xcconfig"; sourceTree = "<group>"; };
 		595A6B8A730A1187C5CD2C19 /* libPods-AIELoopView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AIELoopView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		768B24E33B437C5B0E4780C0 /* Pods-AIELoopView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIELoopView.release.xcconfig"; path = "Pods/Target Support Files/Pods-AIELoopView/Pods-AIELoopView.release.xcconfig"; sourceTree = "<group>"; };
+		AC13A2901F5798E2007CE0A8 /* AIELoopPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIELoopPageControl.h; sourceTree = "<group>"; };
+		AC13A2911F5798E2007CE0A8 /* AIELoopPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIELoopPageControl.m; sourceTree = "<group>"; };
 		ACD3FD681EFA19390046EB19 /* AIELoopView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIELoopView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD3FD6C1EFA19390046EB19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACD3FD6E1EFA19390046EB19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				ACD3FD861EFA19590046EB19 /* AIELoopViewCell.m */,
 				ACD3FD871EFA19590046EB19 /* AIELoopViewLayout.h */,
 				ACD3FD881EFA19590046EB19 /* AIELoopViewLayout.m */,
+				AC13A2901F5798E2007CE0A8 /* AIELoopPageControl.h */,
+				AC13A2911F5798E2007CE0A8 /* AIELoopPageControl.m */,
 			);
 			path = loopView;
 			sourceTree = SOURCE_ROOT;
@@ -252,6 +257,7 @@
 				ACD3FD891EFA19590046EB19 /* AIELoopView.m in Sources */,
 				ACD3FD731EFA19390046EB19 /* ViewController.m in Sources */,
 				ACD3FD701EFA19390046EB19 /* AppDelegate.m in Sources */,
+				AC13A2921F5798E2007CE0A8 /* AIELoopPageControl.m in Sources */,
 				ACD3FD6D1EFA19390046EB19 /* main.m in Sources */,
 				ACD3FD8A1EFA19590046EB19 /* AIELoopViewCell.m in Sources */,
 			);

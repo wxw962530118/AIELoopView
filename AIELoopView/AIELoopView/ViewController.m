@@ -41,7 +41,7 @@
         make.top.equalTo(self.view.mas_top).offset(64);
         make.left.equalTo(self.view.mas_left).offset(30);
         make.right.equalTo(self.view.mas_right).offset(-30);
-        make.height.mas_equalTo(120);
+        make.height.mas_equalTo(220);
     }];
     
     //创建网络图片轮播器
@@ -55,7 +55,7 @@
         make.top.equalTo(urlLoopView.mas_bottom).offset(64);
         make.left.equalTo(self.view.mas_left).offset(30);
         make.right.equalTo(self.view.mas_right).offset(-30);
-        make.height.mas_equalTo(120);
+        make.height.mas_equalTo(220);
     }];
     
     
